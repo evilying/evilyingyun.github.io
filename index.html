@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -199,51 +199,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天上了<a href="http://keg.cs.tsinghua.edu.cn/jietang/" target="_blank" rel="external">唐杰</a>大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup<br>的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。<br>简单来说就是把数据分成三部分：training data | (public) simple validation data | (private) hard test data<br>课上介绍的大赛有</p>
-<ul>
-<li><a href="http://www.kdd.org/kdd-cup" target="_blank" rel="external">KDD Cup</a>  </li>
-<li><a href="http://www.sportsbetcikm15.com/" target="_blank" rel="external">CIKM Competition</a></li>
-<li><a href="https://www.kaggle.com/c/icdm-2015-drawbridge-cross-device-connections" target="_blank" rel="external">ICDM Contest</a></li>
-<li><a href="http://ijcai-16.org/index.php/welcome/view/competitions" target="_blank" rel="external">IJCAI Competition</a><br>还有很多可以到<a href="https://www.kaggle.com/" target="_blank" rel="external">Kaggle</a>上看有哪些比赛。</li>
-</ul>
-<h2 id="比赛经验"><a href="#比赛经验" class="headerlink" title="比赛经验"></a>比赛经验</h2><p>此牛介绍了一些参加比赛的经验，对我而言用处颇大，毕竟有好多Data Science工具可以用。</p>
-<ul>
-<li>Machine Learning Methods<ul>
-<li>Logistic regression<ul>
-<li>Use the implementation of Liblinear</li>
-</ul>
-</li>
-<li>Factorization machines <ul>
-<li>Use the implementation of LibFM</li>
-</ul>
-</li>
-<li>Gradient boosting decision trees<ul>
-<li>Use the implementation of XGBoost</li>
-</ul>
-</li>
-<li>Simple Ensemble </li>
-<li>Diversified Ensemble </li>
-</ul>
-</li>
-<li>Useful tools: <ul>
-<li>Python</li>
-<li><a href="https://github.com/dmlc/xgboost" target="_blank" rel="external">XGBoost</a></li>
-<li><a href="http://scikit-learn.org/stable/index.html" target="_blank" rel="external">SKLearn</a></li>
-<li><a href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank" rel="external">Liblinear</a></li>
-<li><a href="http://libfm.org/" target="_blank" rel="external">LibFM</a> </li>
-<li>Shell </li>
-</ul>
-</li>
-<li>Feature Engineering <ul>
-<li>Embedding Features</li>
-<li>Repeat Features</li>
-</ul>
-</li>
-<li>Efficient iteration cycle </li>
-<li>Domain Knowledge </li>
-<li>Powerful Machine </li>
-</ul>
-
+        <p>今天上了<a href="http://keg.cs.tsinghua.edu.cn/jietang/">唐杰</a>大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup<br>的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。
       
     </div>
     
@@ -256,6 +212,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/05/dataMiningCup/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -299,15 +259,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天使用THUThesis模版，编译时出现了诸多问题，将重要的部分列出，以待后续时日查看，如果能给读者以方便之处，当属幸事。</p>
-<h2 id="依赖项问题"><a href="#依赖项问题" class="headerlink" title="依赖项问题"></a>依赖项问题</h2><h3 id="Use-Package-listing-error-Listing-sty-not-found"><a href="#Use-Package-listing-error-Listing-sty-not-found" class="headerlink" title="Use Package listing error: Listing.sty not found"></a>Use Package listing error: Listing.sty not found</h3><p>MikTex本来是自动下载依赖包，不过这个style依赖是个意外，<a href="http://tex.stackexchange.com/questions/146147/use-package-listing-error-listing-sty-not-found" target="_blank" rel="external">解决方法</a>是</p>
-<ul>
-<li>输入mpm命令，启动MikTex Package Manager</li>
-<li>找到Listing.sty进行安装 </li>
-</ul>
-<h2 id="字体问题"><a href="#字体问题" class="headerlink" title="字体问题"></a>字体问题</h2><h3 id="Trying-to-make-PK-font-at-amp-amp-amp-DPI"><a href="#Trying-to-make-PK-font-at-amp-amp-amp-DPI" class="headerlink" title="Trying to make PK font * at &amp;&amp;&amp; DPI"></a>Trying to make PK font <em>*</em> at &amp;&amp;&amp; DPI</h3><p>这个错误让人猝不及防，我怀疑是ttf包的问题,就重新下载了对应出问题的ttf，然而并没什么卵用。<br>之后搜索到<a href="https://dev-eth0.de/miktex-makepk-pk-font-umvs-could-not-be-created/" target="_blank" rel="external">解决方案</a>，找到miktex的安装位置,在bin目录下执行<br>initexmf –mkmaps<br>initexmf –update-fndb<br>这个应该是重新更新一下字体库的映射关系。不过这个不是通用的解决方案，我之前遇到了更加棘手的问题，<br>要自己重新建立映射，具体的忘记了。</p>
-<h2 id="make问题"><a href="#make问题" class="headerlink" title="make问题"></a>make问题</h2><p>编译一把竟然要13秒，而且还无法自动弹出PDF文件，实在难以忍受。想了想问题所在，之前是pdflatex直接编译就可以了，<br>为何要<a href="http://www.ctan.org/pkg/thuthesis" target="_blank" rel="external">他们</a>提供的Makefile，尝试删去，竟然可以了，关键是快外加自动弹PDF :(|)。<br>估计是因为latex编译器首先执行本地的Makefile，如果找不到，再按照自己的Makefile编译一把。</p>
-
+        <p>今天使用THUThesis模版，编译时出现了诸多问题，将重要的部分列出，以待后续时日查看，如果能给读者以方便之处，当属幸事。
       
     </div>
     
@@ -320,6 +272,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/05/aboutTHUThesisLatex/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
