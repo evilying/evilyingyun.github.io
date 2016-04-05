@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jinkun.site/2016/04/05/dataMiningCup/index.html">
 <meta property="og:site_name" content="Ying">
 <meta property="og:description" content="今天上了唐杰大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。">
-<meta property="og:updated_time" content="2016-04-05T13:16:29.288Z">
+<meta property="og:updated_time" content="2016-04-05T13:56:02.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Data Mining Cup">
 <meta name="twitter:description" content="今天上了唐杰大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。">
@@ -216,7 +216,7 @@
 <li><a href="https://www.kaggle.com/c/icdm-2015-drawbridge-cross-device-connections" target="_blank" rel="external">ICDM Contest</a></li>
 <li><a href="http://ijcai-16.org/index.php/welcome/view/competitions" target="_blank" rel="external">IJCAI Competition</a><br>还有很多可以到<a href="https://www.kaggle.com/" target="_blank" rel="external">Kaggle</a>上看有哪些比赛。</li>
 </ul>
-<h2 id="比赛经验"><a href="#比赛经验" class="headerlink" title="比赛经验"></a>比赛经验</h2><p>此牛介绍了一些参加比赛的经验，对我而言用处颇大，毕竟有好多Data Science工具可以用。</p>
+<h2 id="比赛经验"><a href="#比赛经验" class="headerlink" title="比赛经验"></a>比赛经验</h2><p><a href="http://zhanpengfang.github.io/" target="_blank" rel="external">此牛</a>介绍了一些参加比赛的经验，对我而言用处颇大，毕竟有好多Data Science工具可以用。</p>
 <ul>
 <li>Machine Learning Methods<ul>
 <li>Logistic regression<ul>
@@ -277,12 +277,28 @@
 <li>Make Validation Dataset as Realistic as Possible<ul>
 <li>Usually this means “out-of-time” validation <ul>
 <li>Free to use “in-time” random split to build models, tune parameters, etc</li>
-<li>But hold out data should be <em>out-of-time</em></li>
+<li>But hold out data should be <strong>out-of-time</strong> </li>
 </ul>
 </li>
 <li>Exception to the rule: cross validation when data extremely small<ul>
 <li>But keep in mind that your model won’t perform as well in reality</li>
 <li>The more times you “tweak” your model, the bigger the gap </li>
+</ul>
+</li>
+<li>Note: 意思是不管你怎么分数据，验证的数据要保持不变才可以；但是如果样本量太少，那就采用交叉验证，那么验证的数据自然会变化。</li>
+</ul>
+</li>
+<li>Tools<ul>
+<li>GBM<ul>
+<li>When in doubt, use GBM </li>
+<li>GBM automatically approximate <ul>
+<li>Non-linear transformations </li>
+<li>Subtle and deep interactions </li>
+</ul>
+</li>
+<li>GBM gracfully treats missing values </li>
+<li>GBM is invariant to monotonic transformation of features</li>
+<li>GBDT Hyper Parameter Tuning </li>
 </ul>
 </li>
 </ul>
