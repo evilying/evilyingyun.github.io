@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jinkun.site/2016/04/05/dataMiningCup/index.html">
 <meta property="og:site_name" content="Ying">
 <meta property="og:description" content="今天上了唐杰大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。">
-<meta property="og:updated_time" content="2016-04-05T13:56:02.851Z">
+<meta property="og:updated_time" content="2016-04-05T15:53:00.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Data Mining Cup">
 <meta name="twitter:description" content="今天上了唐杰大牛的机器学习课程，收获匪浅啊，关键是有机会听到清华计算机特等奖学金获得者传授Data Mining Cup的经验，在研一的时候倒是数据质量课程搞了个DQ CUP。">
@@ -71,7 +71,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -298,12 +298,40 @@
 </li>
 <li>GBM gracfully treats missing values </li>
 <li>GBM is invariant to monotonic transformation of features</li>
-<li>GBDT Hyper Parameter Tuning </li>
+<li>GBDT Hyper Parameter Tuning <ul>
+<li><a href="https://github.com/tqchen/xgboost" target="_blank" rel="external">Best GBDT implementation today</a></li>
+</ul>
+</li>
+<li>High cardinality features<ul>
+<li>These are very commonly encountered – zip code, injury type, ICD9, text, etc. </li>
+<li>Convert into numerical with preprocessing – out-of-fold average, counts, etc</li>
+<li>Use Ridge regression(or similar) and <ul>
+<li>use out-of-fold prediction as input to GBM </li>
+<li>or blend </li>
+</ul>
+</li>
+<li>use N-way interactions <ul>
+<li>7-way </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GBM with out-of-fold treatment of high-cardinality feature performs very well</li>
+</ul>
+</li>
+<li>Stacking <ul>
+<li>Basic idea – use one model’s output as the next model’s input </li>
+<li><strong>Not a good idea</strong> to use in sample prediction for stacking <ul>
+<li>The problem is over-fitting </li>
+<li>The more “over-fitting” prediction1 is, the more weight it will get in Model2</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<p>Note: <a href="http://www.52nlp.cn/cikm-competition-topdata" target="_blank" rel="external">Detailed Experience of Champion</a> </p>
 
       
     </div>
