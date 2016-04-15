@@ -199,16 +199,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h2><h3 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h3><p>Signal $y$ is function: $y = f(x)$</p>
-<h3 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h3><p>DT systems can be described by </p>
+        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><p>Signal $y$ is function: $y = f(x)$</p>
+<h2 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h2><p>DT systems can be described by </p>
 <ul>
 <li>difference equations</li>
-<li>block diagrams</li>
-<li>operator notation<h4 id="Operator-Notation"><a href="#Operator-Notation" class="headerlink" title="Operator Notation"></a>Operator Notation</h4>Let $R$ represent the right-shift operator:<br>$Y = R{X} = RX$, where $X = x[n]$ for all n, $Y = y[n]$ for all n<br>Operators manipulate the whole signal rather than samples.<br>Use <strong>Operator Algebra</strong> to describe the system. </li>
+<li>block diagrams    </li>
+<li>operator notation</li>
+</ul>
+<h3 id="Operator-Notation"><a href="#Operator-Notation" class="headerlink" title="Operator Notation"></a>Operator Notation</h3><p>Let $R$ represent the right-shift operator:<br>$Y = R{X} = RX$, where $X = x[n]$ for all n, $Y = y[n]$ for all n<br>Operators manipulate the whole signal rather than samples.<br>Use <strong>Operator Algebra</strong> to describe the system. </p>
+<ul>
 <li>pulse function: $x[n] = \delta[n]$</li>
-<li>Difference system: $y[n] = x[n] - x[n-1]$ equals $Y = X - RX = (1-R)X$</li>
+<li>Difference system: $y[n] = x[n] - x[n-1]$ equals $Y = X - RX = (1-R)X$ <ul>
+<li>$(1-R)$ is the response of this system </li>
+<li><strong>The impulse response of an acyclic system has finite duration</strong> </li>
+</ul>
+</li>
 <li>Accumulator system: $(1-R)Y = X$ equals $Y = (1+R+R^2+R^3+…)X$<ul>
 <li>Persistent response to a transient input </li>
+<li><strong>The impulse response of a cyclic system has infinite duration </strong></li>
 <li>Find $y[n]$ given $x[n] = \delta$, $y[n] = x[n] + y[n-1]$ <ul>
 <li>$y[0] = x[0] + y[-1] = 1 + 0 = 1$</li>
 <li>$y[1] = x[1] + y[0] = 0 + 1 = 1$</li>
@@ -216,18 +224,54 @@
 <li>$…$ </li>
 </ul>
 </li>
+<li>A bank account that pays no interest </li>
 </ul>
 </li>
 </ul>
 <p>Operator representations analyze the system as polynomials. </p>
-<h4 id="feedback"><a href="#feedback" class="headerlink" title="feedback"></a>feedback</h4><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cycles. </p>
+<h3 id="feedback"><a href="#feedback" class="headerlink" title="feedback"></a>feedback</h3><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cyclic subsystems. </p>
 <ul>
 <li>Difference system has no feedback, but Accumulator system has. </li>
 </ul>
-<h4 id="Geometric-Growth-Poles"><a href="#Geometric-Growth-Poles" class="headerlink" title="Geometric Growth: Poles"></a>Geometric Growth: Poles</h4><p><strong>The input is transient, but the response persists</strong><br>The unit-sample responses can be characterized by a single number – the <strong>pole</strong>,<br>which is the base of the geometric sequence.<br>$$<br>y[n] = \{ \begin{matrix} p_0^n &amp; n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<br>The value of $p_0$ determines the rate of growth. </p>
+<h3 id="Geometric-Growth-Poles"><a href="#Geometric-Growth-Poles" class="headerlink" title="Geometric Growth: Poles"></a>Geometric Growth: Poles</h3><p><strong>The input is transient, but the response persists</strong><br>The unit-sample responses can be characterized by a single number – the <strong>pole</strong>,<br>which is the base of the geometric sequence.<br>$$<br>y[n] = \{ \begin{matrix} p_0^n &amp; n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<br>The value of $p_0$ determines the rate of growth. </p>
 <ul>
+<li>Factor Second-Order system then Higher-Order system <ul>
+<li>Partial functions to provide a parallel implementation </li>
+</ul>
+</li>
 <li>The key to simplifying a higher-order system is identifying its poles </li>
-<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<br>Start with system functional: </li>
+<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<ul>
+<li>Start with system functional:<br>$$\frac{Y}{X} = \frac{1}{1-1.6R+0.63R^2} = \frac{1}{(1-p_0R)(1-p_1R)} = \frac{1}{(1-0.7R)(1-0.9R)}$$ </li>
+<li>Substitute R with $\cfrac{1}{z}$:<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-Fibonacci-system"><a href="#Example-Fibonacci-system" class="headerlink" title="Example: Fibonacci system"></a>Example: Fibonacci system</h3><h4 id="Poles"><a href="#Poles" class="headerlink" title="Poles"></a>Poles</h4><ul>
+<li>Difference equation for Fibonacci system<br>$y[n] = x[n] + y[n-1] + y[n-2]$</li>
+<li>System functional<br>$H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2}$</li>
+<li>Poles are at $z_0 = \phi = \cfrac{1+\sqrt{5}}{2} = 1.618$ and $z_1 = -\cfrac{1}{\phi} = -0.618$</li>
+<li>Mode<ul>
+<li>Each pole corresponds to a fundamental mode: $\phi^n$ and $(-\cfrac{1}{\phi})^n$</li>
+<li>$\phi^n$ diverges and $(-\cfrac{1}{\phi})^n$ oscillates </li>
+</ul>
+</li>
+<li>Response<br>The unit-sample response of the Fibonacci system can be written as a sum of fundamental modes:<br>$$<br>H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2} = \cfrac{\frac{\phi}{\sqrt{5}}}{1-\phi R} + \cfrac{\frac{1}{\phi \sqrt{5}}}{1+\frac{1}{\phi} R}<br>$$<br>$$<br>h[n] = \frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n; \quad n &gt;= 0<br>$$</li>
+<li>$h[n]$ is the Fibonacci sequence $f$, just calculate $f[n]$ without knowing $f[n-1]$ and $f[n-2]$ </li>
+</ul>
+<h4 id="Complex-Poles"><a href="#Complex-Poles" class="headerlink" title="Complex Poles"></a>Complex Poles</h4><ul>
+<li>Partial fractions work even when the poles are complex </li>
+<li><p>Example: $H = \cfrac{Y}{X} = \cfrac{1}{1-R+R^2} = \cfrac{z^2}{1-z+z^2}$</p>
+<ul>
+<li>Poles are $z = \frac{1}{2} \pm \frac{\sqrt{3}}{2} = e^{\pm \frac{j\pi}{3}}$ </li>
+<li>$H = \cfrac{1}{1-e^{\frac{j\pi}{3}}R} * \cfrac{1}{1-e^{-\frac{j\pi}{3}}R}<br>   = \cfrac{1}{j\sqrt{3}}(\cfrac{e^{\frac{j\pi}{3}}}{1-e^{\frac{j\pi}{3}}R} - \cfrac{e^{\frac{-j\pi}{3}}}{1-e^{-\frac{j\pi}{3}}R})$ </li>
+<li>Two fundamental modes (both geometric sequences) <ul>
+<li>$e^{\frac{jn\pi}{3}} = \cos(\frac{n\pi}{3}) + j\sin(\frac{n\pi}{3})$ and $e^{\frac{-jn\pi}{3}} = \cos(\frac{-n\pi}{3}) - j\sin(\frac{n\pi}{3})$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>The output of a real system has real values</strong><br>$y[n] = x[n] + y[n-1] - y[n-2]$</p>
+</li>
 </ul>
 <p><a href="http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/Image_Processing.html" target="_blank" rel="external">image processing</a></p>
 
