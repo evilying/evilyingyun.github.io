@@ -4,18 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Segway Robot at the Intel Developer Forum | Ying</title>
+  <title>信号与系统 | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
+  <meta name="description" content="SignalContinuous Signal SystemSignal $y$ is function: $y = f(x)$
+Discrete Signal SystemDT systems can be described by 
+
+difference equations
+block diagrams
+operator notationOperator NotationLet $R$ re">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Segway Robot at the Intel Developer Forum">
-<meta property="og:url" content="http://jinkun.site/2016/04/13/aboutSegwayRobot/index.html">
+<meta property="og:title" content="信号与系统">
+<meta property="og:url" content="http://jinkun.site/2016/04/15/aboutSignals-Systems/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
-<meta property="og:updated_time" content="2016-04-13T10:09:34.080Z">
+<meta property="og:description" content="SignalContinuous Signal SystemSignal $y$ is function: $y = f(x)$
+Discrete Signal SystemDT systems can be described by 
+
+difference equations
+block diagrams
+operator notationOperator NotationLet $R$ re">
+<meta property="og:updated_time" content="2016-04-15T11:52:38.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Segway Robot at the Intel Developer Forum">
-<meta name="twitter:description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
+<meta name="twitter:title" content="信号与系统">
+<meta name="twitter:description" content="SignalContinuous Signal SystemSignal $y$ is function: $y = f(x)$
+Discrete Signal SystemDT systems can be described by 
+
+difference equations
+block diagrams
+operator notationOperator NotationLet $R$ re">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -172,11 +187,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-aboutSegwayRobot" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-aboutSignals-Systems" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/13/aboutSegwayRobot/" class="article-date">
-  	<time datetime="2016-04-13T09:44:27.000Z" itemprop="datePublished">2016-04-13</time>
+      <a href="/2016/04/15/aboutSignals-Systems/" class="article-date">
+  	<time datetime="2016-04-15T03:53:40.000Z" itemprop="datePublished">2016-04-15</time>
 </a>
     </div>
   
@@ -189,7 +204,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Segway Robot at the Intel Developer Forum
+      信号与系统
     </h1>
   
 
@@ -205,20 +220,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在网上看到<a href="http://robot.segway.com/" target="_blank" rel="external">Segway机器人</a>的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，<br>这下还是不如lego Ev3。<a id="more"></a> </p>
-<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
-<li>开发人员比较多，会有很多应用出来，毕竟平台是越有趣越好，</li>
-<li>这个机器人上面有GPU芯片，这个大大增强了计算能力。</li>
+        <h2 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h2><h3 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h3><p>Signal $y$ is function: $y = f(x)$</p>
+<h3 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h3><p>DT systems can be described by </p>
+<ul>
+<li>difference equations</li>
+<li>block diagrams</li>
+<li>operator notation<h4 id="Operator-Notation"><a href="#Operator-Notation" class="headerlink" title="Operator Notation"></a>Operator Notation</h4>Let $R$ represent the right-shift operator:<br>$Y = R{X} = RX$, where $X = x[n]$ for all n, $Y = y[n]$ for all n<br>Operators manipulate the whole signal rather than samples.<br>Use <strong>Operator Algebra</strong> to describe the system. </li>
+<li>pulse function: $x[n] = \delta[n]$</li>
+<li>Difference system: $y[n] = x[n] - x[n-1]$ equals $Y = X - RX = (1-R)X$</li>
+<li>Accumulator system: $(1-R)Y = X$ equals $Y = (1+R+R^2+R^3+…)X$<ul>
+<li>Persistent response to a transient input </li>
+<li>Find $y[n]$ given $x[n] = \delta$, $y[n] = x[n] + y[n-1]$ <ul>
+<li>$y[0] = x[0] + y[-1] = 1 + 0 = 1$</li>
+<li>$y[1] = x[1] + y[0] = 0 + 1 = 1$</li>
+<li>$y[2] = x[2] + y[1] = 0 + 1 = 1$ </li>
+<li>$…$ </li>
 </ul>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li>基于Java的应用会很慢，</li>
-<li>如果使用C/C++然后基于NDK，会比较麻烦，本身就有个兼容的问题。</li>
+</li>
 </ul>
-<h3 id="有意思的应用"><a href="#有意思的应用" class="headerlink" title="有意思的应用"></a>有意思的应用</h3><ul>
-<li>用来找物体</li>
-<li>像迅猛龙，追捕锁定的物体</li>
+</li>
 </ul>
-<p>所以，还是希望能有个基于Linux的版本出现，就像树莓派机器人一样。看来还是自己搭建一个<strong>平台</strong>好了。<br>另外一个亮点是Intel发布了只要10美元的芯片，额，这么便宜的芯片确定性能好吗？</p>
+<p>Operator representations analyze the system as polynomials. </p>
+<h4 id="feedback"><a href="#feedback" class="headerlink" title="feedback"></a>feedback</h4><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cycles. </p>
+<ul>
+<li>Difference system has no feedback, but Accumulator system has. </li>
+</ul>
+<h4 id="Geometric-Growth-Poles"><a href="#Geometric-Growth-Poles" class="headerlink" title="Geometric Growth: Poles"></a>Geometric Growth: Poles</h4><p><strong>The input is transient, but the response persists</strong><br>The unit-sample responses can be characterized by a single number – the <strong>pole</strong>,<br>which is the base of the geometric sequence.<br>$$<br>y[n] = \{ \begin{matrix} p_0^n &amp; n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<br>The value of $p_0$ determines the rate of growth. </p>
+<ul>
+<li>The key to simplifying a higher-order system is identifying its poles </li>
+<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<br>Start with system functional: </li>
+</ul>
+<p><a href="http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/Image_Processing.html" target="_blank" rel="external">image processing</a></p>
 
       
     </div>
@@ -228,18 +260,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/14/aboutDream/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          如风般的思绪
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/12/aboutMicrosoftLesson/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Big Machine Learning @MSRA</div>
+    <a href="/2016/04/14/aboutDream/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如风般的思绪</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

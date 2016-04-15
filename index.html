@@ -173,6 +173,145 @@
 
       <div class="body-wrap">
   
+    <article id="post-aboutSignals-Systems" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/aboutSignals-Systems/" class="article-date">
+  	<time datetime="2016-04-15T03:53:40.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/aboutSignals-Systems/">信号与系统</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h2><h3 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h3><p>Signal $y$ is function: $y = f(x)$</p>
+<h3 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h3><p>DT systems can be described by </p>
+<ul>
+<li>difference equations</li>
+<li>block diagrams</li>
+<li>operator notation<h4 id="Operator-Notation"><a href="#Operator-Notation" class="headerlink" title="Operator Notation"></a>Operator Notation</h4>Let $R$ represent the right-shift operator:<br>$Y = R{X} = RX$, where $X = x[n]$ for all n, $Y = y[n]$ for all n<br>Operators manipulate the whole signal rather than samples.<br>Use <strong>Operator Algebra</strong> to describe the system. </li>
+<li>pulse function: $x[n] = \delta[n]$</li>
+<li>Difference system: $y[n] = x[n] - x[n-1]$ equals $Y = X - RX = (1-R)X$</li>
+<li>Accumulator system: $(1-R)Y = X$ equals $Y = (1+R+R^2+R^3+…)X$<ul>
+<li>Persistent response to a transient input </li>
+<li>Find $y[n]$ given $x[n] = \delta$, $y[n] = x[n] + y[n-1]$ <ul>
+<li>$y[0] = x[0] + y[-1] = 1 + 0 = 1$</li>
+<li>$y[1] = x[1] + y[0] = 0 + 1 = 1$</li>
+<li>$y[2] = x[2] + y[1] = 0 + 1 = 1$ </li>
+<li>$…$ </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Operator representations analyze the system as polynomials. </p>
+<h4 id="feedback"><a href="#feedback" class="headerlink" title="feedback"></a>feedback</h4><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cycles. </p>
+<ul>
+<li>Difference system has no feedback, but Accumulator system has. </li>
+</ul>
+<h4 id="Geometric-Growth-Poles"><a href="#Geometric-Growth-Poles" class="headerlink" title="Geometric Growth: Poles"></a>Geometric Growth: Poles</h4><p><strong>The input is transient, but the response persists</strong><br>The unit-sample responses can be characterized by a single number – the <strong>pole</strong>,<br>which is the base of the geometric sequence.<br>$$<br>y[n] = \{ \begin{matrix} p_0^n &amp; n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<br>The value of $p_0$ determines the rate of growth. </p>
+<ul>
+<li>The key to simplifying a higher-order system is identifying its poles </li>
+<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<br>Start with system functional: </li>
+</ul>
+<p><a href="http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/Image_Processing.html" target="_blank" rel="external">image processing</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aboutDream" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/14/aboutDream/" class="article-date">
+  	<time datetime="2016-04-14T11:52:04.000Z" itemprop="datePublished">2016-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/14/aboutDream/">如风般的思绪</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题篇"><a href="#问题篇" class="headerlink" title="问题篇"></a>问题篇</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/14/aboutDream/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-aboutSegwayRobot" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
