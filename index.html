@@ -199,7 +199,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><p>Signal $y$ is function: $y = f(x)$</p>
+        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
+<li>Signal $y$ is function: $y = f(x)$</li>
+<li>described by differential equations </li>
+<li>CT Block diagrams use $A$ Operator (<strong>Area Operator</strong>)<ul>
+<li>$Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)dt, \quad for \; all \; time \; t$ </li>
+</ul>
+</li>
+</ul>
+<p>Evaluating Operator Expressions (as rules for polynomials)</p>
+<ul>
+<li>Commutativity, Distributivity, Associativity </li>
+</ul>
+<p>Impulse response of CT system with feedback<br>differential equation $\dot{y}(t) = x(t) + py(t)$<br>$Y = A(X + pY)$ then, $\cfrac{Y}{X} = \cfrac{A}{1-pA}$<br>expend in ascending series in A<br>$\cfrac{Y}{X} = A(1+pA + p^2A^2 + p^3A^3 + …)$<br>if $x(t) = \delta(t)$ then<br>$y(t) = A(1+pA + p^2A^2 + p^3A^3 + …)\delta(t)$<br>$y(t) = (1 + pt + \frac{1}{2}p^2t^2 + \frac{1}{6}p^3t^3 + …)u(t)$<br>$y(t) = e^{pt}u(t)$    </p>
+<h3 id="CT-and-DT-representations"><a href="#CT-and-DT-representations" class="headerlink" title="CT and DT representations"></a>CT and DT representations</h3><ul>
+<li><p>Many similarities </p>
+<ul>
+<li>Similar expression <ul>
+<li>$\dot{y}(t) = x(t) + py(t)$ </li>
+<li>$y[n] = x[n] + py[n-1]$ </li>
+</ul>
+</li>
+<li>Simpilar system functional  <ul>
+<li>$\frac{A}{1-pA}$</li>
+<li>$\frac{1}{1-pR}$</li>
+</ul>
+</li>
+<li>Similar Poles <ul>
+<li>$p$  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Important differences</p>
+<ul>
+<li>diferent unit-impulse response (composed of fundamental modes)<ul>
+<li>$e^{pt}u(t)$ </li>
+<li>$p^nu[n]$ </li>
+</ul>
+</li>
+<li>different <strong>convergence</strong> conditions <ul>
+<li>the left half plane</li>
+<li>within unit circle</li>
+<li>e.g., $\frac{1}{1+2R+3/4R^2}$ and $\frac{1}{1+2A+3/4A^2}$<ul>
+<li>inside &amp; outside unit circle, diverge </li>
+<li>both left plane, converge </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Real-valued inputs always excite combinations of modes so that the imaginary parts cancel </p>
+</li>
+<li><strong>When we talk about response, in fact, we mean the impulse response(the input is impulse function)</strong><h3 id="Unit-Step"><a href="#Unit-Step" class="headerlink" title="Unit Step"></a>Unit Step</h3><h4 id="Discrete-form"><a href="#Discrete-form" class="headerlink" title="Discrete form"></a>Discrete form</h4></li>
+<li>$u[n] = \{ \begin{matrix} 1 &amp; n &gt;= 0 \\ 0 &amp; n &lt; 0 \end{matrix}$ </li>
+<li>discrete-time unit impulse: <ul>
+<li>$\delta[n]=u[n] - u[n-1]$ </li>
+</ul>
+</li>
+</ul>
+<h4 id="Continuous-form"><a href="#Continuous-form" class="headerlink" title="Continuous form"></a>Continuous form</h4><p>The indefinite integral of the unit-impulse is the unit step<br>$<br>u(t) = \int_{-\infty}^{t}\delta(\lambda)d\lambda = \{ \begin{matrix} 1 &amp; t &gt;= 0 \\ 0 &amp; t &lt; 0 \end{matrix}<br>$<br>$A\delta(t) = u(t)$<br>$A^2\delta(t) = tu(t)$<br>$A^3\delta(t) = \cfrac{1}{2}t^2u(t)$</p>
 <h2 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h2><p>DT systems can be described by </p>
 <ul>
 <li>difference equations</li>
@@ -229,7 +289,7 @@
 </li>
 </ul>
 <p>Operator representations analyze the system as polynomials. </p>
-<h3 id="feedback"><a href="#feedback" class="headerlink" title="feedback"></a>feedback</h3><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cyclic subsystems. </p>
+<h3 id="feedback-cyclic"><a href="#feedback-cyclic" class="headerlink" title="feedback (cyclic)"></a>feedback (cyclic)</h3><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cyclic subsystems. </p>
 <ul>
 <li>Difference system has no feedback, but Accumulator system has. </li>
 </ul>
@@ -255,8 +315,8 @@
 <li>$\phi^n$ diverges and $(-\cfrac{1}{\phi})^n$ oscillates </li>
 </ul>
 </li>
-<li>Response<br>The unit-sample response of the Fibonacci system can be written as a sum of fundamental modes:<br>$$<br>H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2} = \cfrac{\frac{\phi}{\sqrt{5}}}{1-\phi R} + \cfrac{\frac{1}{\phi \sqrt{5}}}{1+\frac{1}{\phi} R}<br>$$<br>$$<br>h[n] = \frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n; \quad n &gt;= 0<br>$$</li>
-<li>$h[n]$ is the Fibonacci sequence $f$, just calculate $f[n]$ without knowing $f[n-1]$ and $f[n-2]$ </li>
+<li>Response<br>The unit-sample response of the Fibonacci system can be written as a sum of fundamental modes:<br>$$<br>H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2} = \cfrac{\frac{\phi}{\sqrt{5}}}{1-\phi R} + \cfrac{\frac{1}{\phi \sqrt{5}}}{1+\frac{1}{\phi} R}<br>$$<br>$$<br>h[n] = \frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n; \quad n &gt;= 0<br>$$<br><strong>OR</strong><br>$$<br>h[n] = (\frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n) * u[n]<br>$$</li>
+<li>$h[n]$ is the Fibonacci sequence $f$ (in Fibonacci system, the input is just impulse function $\delta[n]$, so the output is the impuse response), just calculate $f[n]$ without knowing $f[n-1]$ and $f[n-2]$ </li>
 </ul>
 <h3 id="Repeated-Poles"><a href="#Repeated-Poles" class="headerlink" title="Repeated Poles"></a>Repeated Poles</h3><ul>
 <li>Consider a system $H$ whose unit-sample response is<br>$$<br>y[n] = \{ \begin{matrix} n+1 &amp; for \quad n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<ul>
