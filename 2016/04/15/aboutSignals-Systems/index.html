@@ -26,7 +26,7 @@ block diagrams
 operator notation
 
 Operator NotationLet">
-<meta property="og:updated_time" content="2016-04-15T15:53:42.234Z">
+<meta property="og:updated_time" content="2016-04-16T03:51:45.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="信号与系统">
 <meta name="twitter:description" content="SignalContinuous Signal SystemSignal $y$ is function: $y = f(x)$
@@ -92,7 +92,7 @@ Operator NotationLet">
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -273,7 +273,7 @@ Operator NotationLet">
 </ul>
 </li>
 </ul>
-<h3 id="Example-Fibonacci-system"><a href="#Example-Fibonacci-system" class="headerlink" title="Example: Fibonacci system"></a>Example: Fibonacci system</h3><h4 id="Poles"><a href="#Poles" class="headerlink" title="Poles"></a>Poles</h4><ul>
+<h3 id="Example-Fibonacci-system"><a href="#Example-Fibonacci-system" class="headerlink" title="Example: Fibonacci system"></a>Example: Fibonacci system</h3><h4 id="Poles-of-Fibonacci"><a href="#Poles-of-Fibonacci" class="headerlink" title="Poles of Fibonacci"></a>Poles of Fibonacci</h4><ul>
 <li>Difference equation for Fibonacci system<br>$y[n] = x[n] + y[n-1] + y[n-2]$</li>
 <li>System functional<br>$H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2}$</li>
 <li>Poles are at $z_0 = \phi = \cfrac{1+\sqrt{5}}{2} = 1.618$ and $z_1 = -\cfrac{1}{\phi} = -0.618$</li>
@@ -285,7 +285,20 @@ Operator NotationLet">
 <li>Response<br>The unit-sample response of the Fibonacci system can be written as a sum of fundamental modes:<br>$$<br>H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2} = \cfrac{\frac{\phi}{\sqrt{5}}}{1-\phi R} + \cfrac{\frac{1}{\phi \sqrt{5}}}{1+\frac{1}{\phi} R}<br>$$<br>$$<br>h[n] = \frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n; \quad n &gt;= 0<br>$$</li>
 <li>$h[n]$ is the Fibonacci sequence $f$, just calculate $f[n]$ without knowing $f[n-1]$ and $f[n-2]$ </li>
 </ul>
-<h4 id="Complex-Poles"><a href="#Complex-Poles" class="headerlink" title="Complex Poles"></a>Complex Poles</h4><ul>
+<h3 id="Repeated-Poles"><a href="#Repeated-Poles" class="headerlink" title="Repeated Poles"></a>Repeated Poles</h3><ul>
+<li>Consider a system $H$ whose unit-sample response is<br>$$<br>y[n] = \{ \begin{matrix} n+1 &amp; for \quad n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<ul>
+<li>Difference equation: $y[n] = 2y[n-1] - y[n-2] + x[n]$ </li>
+<li>System functional: $H = \cfrac{Y}{X} = \cfrac{1}{1-2R+R^2} = \cfrac{1}{(1-R)(1-R)}$ </li>
+<li>Two identical poles, each at $z = 1$ </li>
+<li>H can be written as the cascade of two identical subsystems, each called G (G is an accumulator)<ul>
+<li>$y[n] = y[n-1] + x[n]$</li>
+</ul>
+</li>
+<li>Because the system functional has two poles at the same location, the unit-sample response of H cannot be expressed as a weighted sum of geometric sequences</li>
+</ul>
+</li>
+</ul>
+<h3 id="Complex-Poles"><a href="#Complex-Poles" class="headerlink" title="Complex Poles"></a>Complex Poles</h3><ul>
 <li>Partial fractions work even when the poles are complex </li>
 <li><p>Example: $H = \cfrac{Y}{X} = \cfrac{1}{1-R+R^2} = \cfrac{z^2}{1-z+z^2}$</p>
 <ul>
@@ -297,8 +310,14 @@ Operator NotationLet">
 </li>
 </ul>
 </li>
-<li><p><strong>The output of a real system has real values</strong><br>$y[n] = x[n] + y[n-1] - y[n-2]$</p>
+<li><p>The <strong>output</strong> of a <strong>real system</strong> has <strong>real values</strong>, and <strong>cannot have imaginary valus</strong>, which will conspire<br>$y[n] = x[n] + y[n-1] - y[n-2]$<br>$H = \cfrac{1}{j\sqrt{3}}(\cfrac{e^{\frac{j\pi}{3}}}{1-e^{\frac{j\pi}{3}}R} - \cfrac{e^{\frac{-j\pi}{3}}}{1-e^{-\frac{j\pi}{3}}R})$<br>$h[n] = \cfrac{1}{j\sqrt{3}}(e^{\frac{j\pi}{3}} * e^{\frac{jn\pi}{3}} - e^{-\frac{j\pi}{3}} * e^{-\frac{jn\pi}{3}})<br>= \cfrac{2}{\sqrt{3}}\sin(\cfrac{(n+1)\phi}{3})$ </p>
 </li>
+</ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
+<li>Systems composed of adders, gains, and delays can be characterized by their poles</li>
+<li>The poles of a system determines its fundamental modes </li>
+<li>The unit-sample response of a system can be expressed as a weighted sum of fundamental modes</li>
+<li>These properties follow from a polynomial interpretation of the system functional </li>
 </ul>
 <p><a href="http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/Image_Processing.html" target="_blank" rel="external">image processing</a></p>
 
