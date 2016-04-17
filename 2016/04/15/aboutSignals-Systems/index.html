@@ -6,28 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>信号与系统 | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SignalContinuous Signal System
-Signal $y$ is function: $y = f(x)$
-described by differential equations 
-CT Block diagrams use $A$ Operator (Area Operator)
-$Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
+  <meta name="description" content="SignalZ-TransformationElementry
+Block Diagram 
+System Functional $\mathcal{H(R)}$
+Unit-Sample Response $h[n]$
+System Function $\mathcal{H}(z)$
+Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ 
+
+Sys">
 <meta property="og:type" content="article">
 <meta property="og:title" content="信号与系统">
 <meta property="og:url" content="http://jinkun.site/2016/04/15/aboutSignals-Systems/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description" content="SignalContinuous Signal System
-Signal $y$ is function: $y = f(x)$
-described by differential equations 
-CT Block diagrams use $A$ Operator (Area Operator)
-$Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
-<meta property="og:updated_time" content="2016-04-16T09:58:46.970Z">
+<meta property="og:description" content="SignalZ-TransformationElementry
+Block Diagram 
+System Functional $\mathcal{H(R)}$
+Unit-Sample Response $h[n]$
+System Function $\mathcal{H}(z)$
+Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ 
+
+Sys">
+<meta property="og:updated_time" content="2016-04-17T14:03:07.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="信号与系统">
-<meta name="twitter:description" content="SignalContinuous Signal System
-Signal $y$ is function: $y = f(x)$
-described by differential equations 
-CT Block diagrams use $A$ Operator (Area Operator)
-$Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
+<meta name="twitter:description" content="SignalZ-TransformationElementry
+Block Diagram 
+System Functional $\mathcal{H(R)}$
+Unit-Sample Response $h[n]$
+System Function $\mathcal{H}(z)$
+Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ 
+
+Sys">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -83,7 +92,7 @@ $Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -217,7 +226,22 @@ $Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
+        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Z-Transformation"><a href="#Z-Transformation" class="headerlink" title="Z-Transformation"></a>Z-Transformation</h2><h3 id="Elementry"><a href="#Elementry" class="headerlink" title="Elementry"></a>Elementry</h3><ul>
+<li>Block Diagram </li>
+<li>System Functional $\mathcal{H(R)}$</li>
+<li>Unit-Sample Response $h[n]$</li>
+<li>System Function $\mathcal{H}(z)$</li>
+<li>Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ </li>
+</ul>
+<h3 id="System-functional-amp-Unit-Sample-Response"><a href="#System-functional-amp-Unit-Sample-Response" class="headerlink" title="System functional &amp; Unit-Sample Response"></a>System functional &amp; Unit-Sample Response</h3><ul>
+<li>System functional:<br>$$<br>\cfrac{Y}{X} = \mathcal{H(R)} = \cfrac{1}{1-R-R^2}<br>$$</li>
+<li>Unit-Sample Response:<br>$$<br>h[n] = 1,1,2,3,5,8,13,21,34,55,…<br>$$</li>
+<li>The relation between them:<br>Coefficients of series representation of $\mathcal{H(R)}$ are the successive samples in unit-sample response. </li>
+</ul>
+<p>$$<br>\mathcal{H(R)} = \cfrac{1}{1-R-R^2} = 1 + R + 2R^2 + 3R^3 + 5R^4 + …<br>$$</p>
+<p>If a system composed of (only) adders, delays, and gains, then </p>
+<p>$$<br>\begin{equation}<br>\begin{split}<br>\mathcal{H(R)} &amp;= h[0] + h[1]R + h[2]R^2 + h[3]R^3 + … \<br>&amp; = \sum_{n=0}h[n]R^{n}<br>\end{split}<br>\end{equation}<br>$$</p>
+<h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
 <li>Signal $y$ is function: $y = f(x)$</li>
 <li>described by differential equations </li>
 <li>CT Block diagrams use $A$ Operator (<strong>Area Operator</strong>)<ul>
@@ -318,9 +342,9 @@ $Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
 </ul>
 </li>
 <li>The key to simplifying a higher-order system is identifying its poles </li>
-<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<ul>
+<li>Poles are the roots of the denominator of the <strong>system functional</strong> when $R \to \cfrac{1}{z}$<ul>
 <li>Start with system functional:<br>$$\frac{Y}{X} = \frac{1}{1-1.6R+0.63R^2} = \frac{1}{(1-p_0R)(1-p_1R)} = \frac{1}{(1-0.7R)(1-0.9R)}$$ </li>
-<li>Substitute R with $\cfrac{1}{z}$:<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
+<li>Substitute R with $\cfrac{1}{z}$(<strong>system function</strong>):<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
 </ul>
 </li>
 </ul>
@@ -379,6 +403,15 @@ $Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)">
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/04/17/aboutCameraFOV/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于相机的视角（FOV）
+        
+      </div>
+    </a>
   
   
     <a href="/2016/04/14/aboutDream/" id="article-nav-older" class="article-nav-link-wrap">

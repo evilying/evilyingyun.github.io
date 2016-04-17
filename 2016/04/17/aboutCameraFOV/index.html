@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: ML | Ying</title>
+  <title>关于相机的视角（FOV） | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ying">
-<meta property="og:url" content="http://jinkun.site/tags/ML/index.html">
+  <meta name="description" content="由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于相机的视角（FOV）">
+<meta property="og:url" content="http://jinkun.site/2016/04/17/aboutCameraFOV/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description">
+<meta property="og:description" content="由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。">
+<meta property="og:updated_time" content="2016-04-17T13:41:50.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ying">
-<meta name="twitter:description">
+<meta name="twitter:title" content="关于相机的视角（FOV）">
+<meta name="twitter:description" content="由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -171,84 +172,71 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-aboutCameraFOV" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/12/aboutMicrosoftLesson/" class="archive-article-date">
-  	<time datetime="2016-04-12T07:40:33.000Z" itemprop="datePublished">Apr 12</time>
+    <div class="article-meta">
+      <a href="/2016/04/17/aboutCameraFOV/" class="article-date">
+  	<time datetime="2016-04-17T11:41:55.000Z" itemprop="datePublished">2016-04-17</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/12/aboutMicrosoftLesson/">Big Machine Learning @MSRA</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于相机的视角（FOV）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lessons/">Lessons</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li></ul>
-	</div>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
 
-          
-
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。<br><a id="more"></a></p>
+<h2 id="连线杂志"><a href="#连线杂志" class="headerlink" title="连线杂志"></a>连线杂志</h2><p>提到了<a href="http://www.wired.com/2015/05/measuring-field-view-iphone-6-camera/" target="_blank" rel="external">如何测$iPhone6$的$FOV$</a><br>杂志中使用了简单的公式进行测量：<br>$$\theta = \cfrac{L}{r},$$<br>其中$L$代表的是物体的长度，$r$代表的是镜头离物体的距离。中间用到了小技巧：$Tiles$。<br>最终的测量结果是$FOV = 1.109rad \approx 63.54^{\circ}$。<br>不过文中测量的视角是平视状态下的，没有考虑高度，是其中的遗憾，因为俯视的视角肯定要小于平视的视角的。<br>另外也没有提手机是横向还是纵向，不过这么看应该是横向($Landscape \, orientation$)。</p>
+<h2 id="摄影网站"><a href="#摄影网站" class="headerlink" title="摄影网站"></a>摄影网站</h2><p>提到了一些参数，<a href="http://snapsnapsnap.photos/a-beginners-guide-for-manual-controls-in-iphone-photography-focus/" target="_blank" rel="external">$FOV = 73^{\circ}$</a>。然而出处不可考。</p>
+<h2 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h2><p><a href="http://stackoverflow.com/questions/3594199/iphone-4-camera-specifications-field-of-view-vertical-horizontal-angle" target="_blank" rel="external">提到了如何计算的</a>，感觉很对的样子，然而需要知道相机里面CMOS Sensor(如：OV8830-G04A)是怎么放置的，三围如何。<br>这就缺乏可靠性了。还有程序猿提出了在$iPhone4$之后可以调用接口得出结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;Camera&apos;s FOV is %f&quot;,myCamera.activeFormat.videoFieldOfView)</span><br></pre></td></tr></table></figure></p>
+<p>里面一共算出了两个数据(Sensor的三围不同):<br>$horizontal: 60.8^{\circ}, vertical: 47.5^{\circ}$和$horizontal: 56.423^{\circ}, vertical: 43.903^{\circ}$ </p>
+<p>综上，我认为用$horizontal \, FOV \approx 60^{\circ}$是合理的。</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/15/aboutSignals-Systems/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">信号与系统</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/05/dataMiningCup/" class="archive-article-date">
-  	<time datetime="2016-04-05T09:24:11.000Z" itemprop="datePublished">Apr 5</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/05/dataMiningCup/">关于Data Mining Cup</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 </div>
       <footer id="footer">
@@ -274,9 +262,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -173,6 +173,62 @@
 
       <div class="body-wrap">
   
+    <article id="post-aboutCameraFOV" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/17/aboutCameraFOV/" class="article-date">
+  	<time datetime="2016-04-17T11:41:55.000Z" itemprop="datePublished">2016-04-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/17/aboutCameraFOV/">关于相机的视角（FOV）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/17/aboutCameraFOV/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-aboutSignals-Systems" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -199,7 +255,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
+        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Z-Transformation"><a href="#Z-Transformation" class="headerlink" title="Z-Transformation"></a>Z-Transformation</h2><h3 id="Elementry"><a href="#Elementry" class="headerlink" title="Elementry"></a>Elementry</h3><ul>
+<li>Block Diagram </li>
+<li>System Functional $\mathcal{H(R)}$</li>
+<li>Unit-Sample Response $h[n]$</li>
+<li>System Function $\mathcal{H}(z)$</li>
+<li>Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ </li>
+</ul>
+<h3 id="System-functional-amp-Unit-Sample-Response"><a href="#System-functional-amp-Unit-Sample-Response" class="headerlink" title="System functional &amp; Unit-Sample Response"></a>System functional &amp; Unit-Sample Response</h3><ul>
+<li>System functional:<br>$$<br>\cfrac{Y}{X} = \mathcal{H(R)} = \cfrac{1}{1-R-R^2}<br>$$</li>
+<li>Unit-Sample Response:<br>$$<br>h[n] = 1,1,2,3,5,8,13,21,34,55,…<br>$$</li>
+<li>The relation between them:<br>Coefficients of series representation of $\mathcal{H(R)}$ are the successive samples in unit-sample response. </li>
+</ul>
+<p>$$<br>\mathcal{H(R)} = \cfrac{1}{1-R-R^2} = 1 + R + 2R^2 + 3R^3 + 5R^4 + …<br>$$</p>
+<p>If a system composed of (only) adders, delays, and gains, then </p>
+<p>$$<br>\begin{equation}<br>\begin{split}<br>\mathcal{H(R)} &amp;= h[0] + h[1]R + h[2]R^2 + h[3]R^3 + … \<br>&amp; = \sum_{n=0}h[n]R^{n}<br>\end{split}<br>\end{equation}<br>$$</p>
+<h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
 <li>Signal $y$ is function: $y = f(x)$</li>
 <li>described by differential equations </li>
 <li>CT Block diagrams use $A$ Operator (<strong>Area Operator</strong>)<ul>
@@ -300,9 +371,9 @@
 </ul>
 </li>
 <li>The key to simplifying a higher-order system is identifying its poles </li>
-<li>Poles are the roots of the denominator of the system functional when $R \to \cfrac{1}{z}$<ul>
+<li>Poles are the roots of the denominator of the <strong>system functional</strong> when $R \to \cfrac{1}{z}$<ul>
 <li>Start with system functional:<br>$$\frac{Y}{X} = \frac{1}{1-1.6R+0.63R^2} = \frac{1}{(1-p_0R)(1-p_1R)} = \frac{1}{(1-0.7R)(1-0.9R)}$$ </li>
-<li>Substitute R with $\cfrac{1}{z}$:<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
+<li>Substitute R with $\cfrac{1}{z}$(<strong>system function</strong>):<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
 </ul>
 </li>
 </ul>
