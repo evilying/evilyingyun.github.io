@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -200,49 +200,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Laplace-Transform"><a href="#Laplace-Transform" class="headerlink" title="Laplace Transform"></a>Laplace Transform</h1><ul>
-<li>Laplace Transform in CT is Corresponding to $Z$ Transform in DT. </li>
-<li><p>Laplace transform maps a function of time $t$ to a function of $s$<br>$<br>X(s) = \int x(t)e^{-st}dt<br>$</p>
-<ul>
-<li>Unilateral<br>$<br>X(s) = \int_0^{\infty} x(t)e^{-st}dt<br>$</li>
-<li>Bilateral<br>$<br>X(s) = \int_{-\infty}^{\infty} x(t)e^{-st}dt<br>$</li>
-</ul>
-</li>
-<li><p>ROC</p>
-<ul>
-<li>Left-sided signals have left-sided Laplace transforms (bilateral only) </li>
-<li>Example: $x(t) = -e^{-t}u(-t)$ <ul>
-<li>$X(s) = \int_{-\infty}^{0}-e^{-t}e^{-st}dt = \cfrac{1}{s+1} $ </li>
-<li>Provided $Re(s+1) &lt; 0$, then $Re(s) &lt; -1$ </li>
-</ul>
-</li>
-<li>Laplace transforms of left- and right-sided exponentials have the <strong>same form</strong> (except −); with left- and right-sided ROCs, respectively.</li>
-<li>Laplace transform of a signal that is both-sided is a vertical strip </li>
-</ul>
-</li>
-<li>Solving Differential Equations with Laplace Transform <ul>
-<li>$\dot{y}(t) + y(t) = \delta{t}$ </li>
-<li>Laplace Transform of a Derivative <ul>
-<li>$y(t) = \dot{x}(t)$ </li>
-<li>$Y(s) = \mathcal{L{y(t)}} = sX(s)$</li>
-<li>Provided $X(s)$ must converge.</li>
-</ul>
-</li>
-<li>Laplace Transform of the Impulse Function <ul>
-<li>$x(t) = \delta{t}$</li>
-<li>$X(s) = \int_{-\infty}^{\infty}x(t)e^{-st}dt = 1$ </li>
-<li>Sifting property: <ul>
-<li>Multiplying $f(t)$ by $\delta{t}$ and integrating over $t$ sifts out $f(0)$ </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Laplace transform converts a differential equation $\dot{y}(t) + y(t) = \delta{t}$ to an equivalent algebraic equation $sY + Y = 1$ </li>
-<li>Take inverse Laplace Transform(by recognizing form of transform): $y(t) = e^{-t}u(t), or\, y(t) = -e^{-t}u(-t), for\, each\, ROC$    </li>
-</ul>
-</li>
-<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-003-signals-and-systems-fall-2011/lecture-videos/MIT6_003F11_lec06.pdf" target="_blank" rel="external">Properties of Laplace Transform</a></li>
-</ul>
-
+<li>Laplace Transform in CT is Corresponding to $Z$ Transform in DT.
       
     </div>
     
@@ -255,6 +213,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/19/aboutLaplaceTransform/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

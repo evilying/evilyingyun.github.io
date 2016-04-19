@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jinkun.site/2016/04/05/aboutTHUThesisLatex/index.html">
 <meta property="og:site_name" content="Ying">
 <meta property="og:description" content="今天使用THUThesis模版，编译时出现了诸多问题，将重要的部分列出，以待后续时日查看，如果能给读者以方便之处，当属幸事。">
-<meta property="og:updated_time" content="2016-04-10T02:26:38.275Z">
+<meta property="og:updated_time" content="2016-04-19T15:07:01.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于THUThesis Latex出现的错误">
 <meta name="twitter:description" content="今天使用THUThesis模版，编译时出现了诸多问题，将重要的部分列出，以待后续时日查看，如果能给读者以方便之处，当属幸事。">
@@ -71,7 +71,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -217,6 +217,12 @@
 </ul>
 <h2 id="字体问题"><a href="#字体问题" class="headerlink" title="字体问题"></a>字体问题</h2><h3 id="Trying-to-make-PK-font-at-amp-amp-amp-DPI"><a href="#Trying-to-make-PK-font-at-amp-amp-amp-DPI" class="headerlink" title="Trying to make PK font * at &amp;&amp;&amp; DPI"></a>Trying to make PK font <em>*</em> at &amp;&amp;&amp; DPI</h3><p>这个错误让人猝不及防，我怀疑是ttf包的问题,就重新下载了对应出问题的ttf，然而并没什么卵用。<br>之后搜索到<a href="https://dev-eth0.de/miktex-makepk-pk-font-umvs-could-not-be-created/" target="_blank" rel="external">解决方案</a>，找到miktex的安装位置,在bin目录下执行<br>initexmf –mkmaps<br>initexmf –update-fndb<br>这个应该是重新更新一下字体库的映射关系。不过这个不是通用的解决方案，我之前遇到了更加棘手的问题，<br>要自己重新建立映射，具体的忘记了。</p>
 <h2 id="make问题"><a href="#make问题" class="headerlink" title="make问题"></a>make问题</h2><p>编译一把竟然要13秒，而且还无法自动弹出PDF文件，实在难以忍受。想了想问题所在，之前是pdflatex直接编译就可以了，<br>为何要<a href="http://www.ctan.org/pkg/thuthesis" target="_blank" rel="external">他们</a>提供的Makefile，尝试删去，竟然可以了，关键是快外加自动弹PDF :(|)。<br>估计是因为latex编译器首先执行本地的Makefile，如果找不到，再按照自己的Makefile编译一把。</p>
+<h2 id="Windows下的Sumatra问题"><a href="#Windows下的Sumatra问题" class="headerlink" title="Windows下的Sumatra问题"></a>Windows下的Sumatra问题</h2><p>Windows下的LatexTools有Bug的，突然有一天找不到$SumatraPDF$了对吧，<br>解决方法：</p>
+<ol>
+<li>检查$PATH$是不是添加了$SumatraPDF$</li>
+<li><a href="https://github.com/SublimeText/LaTeXTools/issues/625" target="_blank" rel="external">“sumatra”: “” to “sumatra”: “H:\\Program Files (x86)\\SumatraPDF\\SumatraPDF.exe”</a></li>
+</ol>
+<p>不过为什么本来好好的，突然就出现这样的问题了，Bug是怎么引起的？还不得而知。</p>
 
       
     </div>
