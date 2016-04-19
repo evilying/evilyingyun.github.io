@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -172,6 +172,105 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-aboutLaplaceTransform" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/19/aboutLaplaceTransform/" class="article-date">
+  	<time datetime="2016-04-19T01:06:36.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/aboutLaplaceTransform/">Laplace Transform</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Laplace-Transform"><a href="#Laplace-Transform" class="headerlink" title="Laplace Transform"></a>Laplace Transform</h1><ul>
+<li>Laplace Transform in CT is Corresponding to $Z$ Transform in DT. </li>
+<li><p>Laplace transform maps a function of time $t$ to a function of $s$<br>$<br>X(s) = \int x(t)e^{-st}dt<br>$</p>
+<ul>
+<li>Unilateral<br>$<br>X(s) = \int_0^{\infty} x(t)e^{-st}dt<br>$</li>
+<li>Bilateral<br>$<br>X(s) = \int_{-\infty}^{\infty} x(t)e^{-st}dt<br>$</li>
+</ul>
+</li>
+<li><p>ROC</p>
+<ul>
+<li>Left-sided signals have left-sided Laplace transforms (bilateral only) </li>
+<li>Example: $x(t) = -e^{-t}u(-t)$ <ul>
+<li>$X(s) = \int_{-\infty}^{0}-e^{-t}e^{-st}dt = \cfrac{1}{s+1} $ </li>
+<li>Provided $Re(s+1) &lt; 0$, then $Re(s) &lt; -1$ </li>
+</ul>
+</li>
+<li>Laplace transforms of left- and right-sided exponentials have the <strong>same form</strong> (except −); with left- and right-sided ROCs, respectively.</li>
+<li>Laplace transform of a signal that is both-sided is a vertical strip </li>
+</ul>
+</li>
+<li>Solving Differential Equations with Laplace Transform <ul>
+<li>$\dot{y}(t) + y(t) = \delta{t}$ </li>
+<li>Laplace Transform of a Derivative <ul>
+<li>$y(t) = \dot{x}(t)$ </li>
+<li>$Y(s) = \mathcal{L{y(t)}} = sX(s)$</li>
+<li>Provided $X(s)$ must converge.</li>
+</ul>
+</li>
+<li>Laplace Transform of the Impulse Function <ul>
+<li>$x(t) = \delta{t}$</li>
+<li>$X(s) = \int_{-\infty}^{\infty}x(t)e^{-st}dt = 1$ </li>
+<li>Sifting property: <ul>
+<li>Multiplying $f(t)$ by $\delta{t}$ and integrating over $t$ sifts out $f(0)$ </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Laplace transform converts a differential equation $\dot{y}(t) + y(t) = \delta{t}$ to an equivalent algebraic equation $sY + Y = 1$ </li>
+<li>Take inverse Laplace Transform(by recognizing form of transform): $y(t) = e^{-t}u(t), or\, y(t) = -e^{-t}u(-t), for\, each\, ROC$    </li>
+</ul>
+</li>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-003-signals-and-systems-fall-2011/lecture-videos/MIT6_003F11_lec06.pdf" target="_blank" rel="external">Properties of Laplace Transform</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lessons/">Lessons</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-aboutCommonTools" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -310,7 +409,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/15/aboutSignals-Systems/">信号与系统</a>
+      <a class="article-title" href="/2016/04/15/aboutSignals-Systems/">CT,DT,Z Transform</a>
     </h1>
   
 
@@ -319,223 +418,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><h2 id="Z-Transformation"><a href="#Z-Transformation" class="headerlink" title="Z-Transformation"></a>Z-Transformation</h2><h3 id="Elementry"><a href="#Elementry" class="headerlink" title="Elementry"></a>Elementry</h3><ul>
-<li>Block Diagram </li>
-<li>System Functional $\mathcal{H(R)} = \sum_{n=0}h[n]R^{n}$</li>
-<li>Unit-Sample Response $h[n]$</li>
-<li>System Function $\mathcal{H(z)} = \sum_{n=0}h[n]z^{-n}$</li>
-<li>Difference Equation $y[n] = x[n] + y[n-1] + y[n-2]$ </li>
-</ul>
-<h3 id="System-functional-amp-Unit-Sample-Response"><a href="#System-functional-amp-Unit-Sample-Response" class="headerlink" title="System functional &amp; Unit-Sample Response"></a>System functional &amp; Unit-Sample Response</h3><ul>
-<li>System functional:<br>$$<br>\cfrac{Y}{X} = \mathcal{H(R)} = \cfrac{1}{1-R-R^2}<br>$$</li>
-<li>Unit-Sample Response:<br>$$<br>h[n] = 1,1,2,3,5,8,13,21,34,55,…<br>$$</li>
-<li>The relation between them:<br>Coefficients of series representation of $\mathcal{H(R)}$ are the successive samples in unit-sample response. </li>
-</ul>
-<p>$$<br>\mathcal{H(R)} = \cfrac{1}{1-R-R^2} = 1 + R + 2R^2 + 3R^3 + 5R^4 + …<br>$$</p>
-<p>If a system composed of (only) adders, delays, and gains, then </p>
-<p>$$<br>\begin{align}<br>\mathcal{H(R)} &amp;= h[0] + h[1]R + h[2]R^2 + h[3]R^3 + … \\<br>               &amp;= \sum_{n=0}h[n]R^{n}<br>\end{align}<br>$$</p>
-<p>Substitute $\mathcal{R} \to \cfrac{1}{z}$<br>$$<br>\mathcal{H(z)} = \sum_{n}h[n]z^{-n}<br>$$</p>
-<ul>
-<li><p>Z Transform</p>
-<ul>
-<li>the relation between $H(z)$ and $h[n]$ </li>
-<li>Z Transform maps a function of discrete-time n to a function of z</li>
-<li>can define a Z tranform for any signal<br>  $X(z) = \sum_{n=-\infty}^{\infty}x[n]z^{-n}$ </li>
-<li>include $n &lt; 0$ as well as $n &gt; 0 \to bilateral \, Z \, transform$ <ul>
-<li>different from unilatral Z tranform </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Example of Z tranforms </p>
-<ul>
-<li>Find the Z transform of the unit-sample signal<br>$x[n] = \delta[n]$<br>$X(z) = \sum_{n=-\infty}^{\infty}x[n]z^{-n} = x[0]z^{0} = 1$</li>
-<li>delayed unit-sample signal<br>$x[n] = \delta[n-1]$<br>$X(z) = x[1]z^{-1} = z^{-1}$ </li>
-<li><p>$x[n] = (\cfrac{7}{8})^nu[n]$<br>$X(z) = \sum_{n=-\infty}^{\infty}(\cfrac{7}{8})^nz^{-n}u[n]$ </p>
-<p>$X(z) = \sum_{n=0}^{\infty}(\cfrac{7}{8})^nz^{-n} = \cfrac{1}{1-\cfrac{7}{8}z^{-1}}$ </p>
-<ul>
-<li>The signal $x[n]$, which is a function of discrete-time n, maps to a Z-Transform $X(z)$, which is function of $z$.</li>
-<li>Z tranform is only defined for values of $z$ for which the defining sum converges<br><strong>Region of Convergence(ROC)</strong>: $|\cfrac{7}{8}z^{-1}|<1,|z|> \cfrac{7}{8}$ </1,|z|></li>
-</ul>
-</li>
-<li>However, given $X(z) = \cfrac{z}{z - \cfrac{7}{8}}$, when $|z| &lt; \cfrac{7}{8}$, original $X(z)$ does not converge <ul>
-<li>Still system functional form is the same <ul>
-<li>$H(z) = \cfrac{Y(z)}{X(z)} = \cfrac{z}{z - 7/8}$</li>
-</ul>
-</li>
-<li>Therefore, difference equation is the same <ul>
-<li>$y[n+1] - \cfrac{7}{8}y[n] = x[n+1]$</li>
-</ul>
-</li>
-<li>Solve by iterating backwards in time <ul>
-<li>$y[n] = \cfrac{8}{7}(y[n+1] - x[n+1])$</li>
-<li>$y[n] = -(\cfrac{8}{7})^{-n};n&lt;0 = -(\cfrac{7}{8})^{n}u[-1-n]$ </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Two signals and two ROCs </li>
-</ul>
-</li>
-<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-003-signals-and-systems-fall-2011/lecture-videos/MIT6_003F11_lec05.pdf" target="_blank" rel="external">Properties of Z Transforms</a></li>
-</ul>
-<h2 id="Continuous-Signal-System"><a href="#Continuous-Signal-System" class="headerlink" title="Continuous Signal System"></a>Continuous Signal System</h2><ul>
-<li>Signal $y$ is function: $y = f(x)$</li>
-<li>described by differential equations </li>
-<li>CT Block diagrams use $A$ Operator (<strong>Area Operator</strong>)<ul>
-<li>$Y = AX$ euqals $y(t) = \int_{-\infty}^{t}x(t)dt, \quad for \; all \; time \; t$ </li>
-</ul>
-</li>
-</ul>
-<p>Evaluating Operator Expressions (as rules for polynomials)</p>
-<ul>
-<li>Commutativity, Distributivity, Associativity </li>
-</ul>
-<p>Impulse response of CT system with feedback<br>differential equation $\dot{y}(t) = x(t) + py(t)$<br>$Y = A(X + pY)$ then, $\cfrac{Y}{X} = \cfrac{A}{1-pA}$<br>expend in ascending series in A<br>$\cfrac{Y}{X} = A(1+pA + p^2A^2 + p^3A^3 + …)$<br>if $x(t) = \delta(t)$ then<br>$y(t) = A(1+pA + p^2A^2 + p^3A^3 + …)\delta(t)$<br>$y(t) = (1 + pt + \frac{1}{2}p^2t^2 + \frac{1}{6}p^3t^3 + …)u(t)$<br>$y(t) = e^{pt}u(t)$    </p>
-<h3 id="CT-and-DT-representations"><a href="#CT-and-DT-representations" class="headerlink" title="CT and DT representations"></a>CT and DT representations</h3><ul>
-<li><p>Many similarities </p>
-<ul>
-<li>Similar expression <ul>
-<li>$\dot{y}(t) = x(t) + py(t)$ </li>
-<li>$y[n] = x[n] + py[n-1]$ </li>
-</ul>
-</li>
-<li>Simpilar system functional  <ul>
-<li>$\frac{A}{1-pA}$</li>
-<li>$\frac{1}{1-pR}$</li>
-</ul>
-</li>
-<li>Similar Poles <ul>
-<li>$p$  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Important differences</p>
-<ul>
-<li>diferent unit-impulse response (composed of fundamental modes)<ul>
-<li>$e^{pt}u(t)$ </li>
-<li>$p^nu[n]$ </li>
-</ul>
-</li>
-<li>different <strong>convergence</strong> conditions <ul>
-<li>the left half plane</li>
-<li>within unit circle (composed of the real part and imaginary part, which compose the whole plane) </li>
-<li>e.g., $\frac{1}{1+2R+3/4R^2}$ and $\frac{1}{1+2A+3/4A^2}$<ul>
-<li>inside &amp; outside unit circle, diverge </li>
-<li>both left plane, converge </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Real-valued inputs always excite combinations of modes so that the imaginary parts cancel </p>
-</li>
-<li><strong>When we talk about response, in fact, we mean the impulse response(the input is impulse function)</strong></li>
-</ul>
-<h3 id="Unit-Step"><a href="#Unit-Step" class="headerlink" title="Unit Step"></a>Unit Step</h3><h4 id="Discrete-form"><a href="#Discrete-form" class="headerlink" title="Discrete form"></a>Discrete form</h4><ul>
-<li>$u[n] = \{ \begin{matrix} 1 &amp; n &gt;= 0 \\ 0 &amp; n &lt; 0 \end{matrix}$ </li>
-<li>discrete-time unit impulse: <ul>
-<li>$\delta[n]=u[n] - u[n-1]$ </li>
-</ul>
-</li>
-</ul>
-<h4 id="Continuous-form"><a href="#Continuous-form" class="headerlink" title="Continuous form"></a>Continuous form</h4><p>The indefinite integral of the unit-impulse is the unit step<br>$<br>u(t) = \int_{-\infty}^{t}\delta(\lambda)d\lambda = \{ \begin{matrix} 1 &amp; t &gt;= 0 \\ 0 &amp; t &lt; 0 \end{matrix}<br>$<br>$A\delta(t) = u(t)$<br>$A^2\delta(t) = tu(t)$<br>$A^3\delta(t) = \cfrac{1}{2}t^2u(t)$</p>
-<h2 id="Discrete-Signal-System"><a href="#Discrete-Signal-System" class="headerlink" title="Discrete Signal System"></a>Discrete Signal System</h2><p>DT systems can be described by </p>
-<ul>
-<li>difference equations</li>
-<li>block diagrams    </li>
-<li>operator notation</li>
-</ul>
-<h3 id="Operator-Notation"><a href="#Operator-Notation" class="headerlink" title="Operator Notation"></a>Operator Notation</h3><p>Let $R$ represent the right-shift operator:<br>$Y = R{X} = RX$, where $X = x[n]$ for all n, $Y = y[n]$ for all n<br>Operators manipulate the whole signal rather than samples.<br>Use <strong>Operator Algebra</strong> to describe the system. </p>
-<ul>
-<li>pulse function: $x[n] = \delta[n]$</li>
-<li>Difference system: $y[n] = x[n] - x[n-1]$ equals $Y = X - RX = (1-R)X$ <ul>
-<li>$(1-R)$ is the response of this system </li>
-<li><strong>The impulse response of an acyclic system has finite duration</strong> </li>
-</ul>
-</li>
-<li>Accumulator system: $(1-R)Y = X$ equals $Y = (1+R+R^2+R^3+…)X$<ul>
-<li>Persistent response to a transient input </li>
-<li><strong>The impulse response of a cyclic system has infinite duration </strong></li>
-<li>Find $y[n]$ given $x[n] = \delta$, $y[n] = x[n] + y[n-1]$ <ul>
-<li>$y[0] = x[0] + y[-1] = 1 + 0 = 1$</li>
-<li>$y[1] = x[1] + y[0] = 0 + 1 = 1$</li>
-<li>$y[2] = x[2] + y[1] = 0 + 1 = 1$ </li>
-<li>$…$ </li>
-</ul>
-</li>
-<li>A bank account that pays no interest </li>
-</ul>
-</li>
-</ul>
-<p>Operator representations analyze the system as polynomials. </p>
-<h3 id="feedback-cyclic"><a href="#feedback-cyclic" class="headerlink" title="feedback (cyclic)"></a>feedback (cyclic)</h3><p>Systems with signals that depend on previous values of the same signal<br>are said to have feedback, which, in block flow representation, has cyclic subsystems. </p>
-<ul>
-<li>Difference system has no feedback, but Accumulator system has. </li>
-</ul>
-<h3 id="Geometric-Growth-Poles"><a href="#Geometric-Growth-Poles" class="headerlink" title="Geometric Growth: Poles"></a>Geometric Growth: Poles</h3><p><strong>The input is transient, but the response persists</strong><br>The unit-sample responses can be characterized by a single number – the <strong>pole</strong>,<br>which is the base of the geometric sequence.<br>$$<br>y[n] = \{ \begin{matrix} p_0^n &amp; n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<br>The value of $p_0$ determines the rate of growth. </p>
-<ul>
-<li>Factor Second-Order system then Higher-Order system <ul>
-<li>Partial functions to provide a parallel implementation </li>
-</ul>
-</li>
-<li>The key to simplifying a higher-order system is identifying its poles </li>
-<li>Poles are the roots of the denominator of the <strong>system functional</strong> when $R \to \cfrac{1}{z}$<ul>
-<li>Start with system functional:<br>$$\frac{Y}{X} = \frac{1}{1-1.6R+0.63R^2} = \frac{1}{(1-p_0R)(1-p_1R)} = \frac{1}{(1-0.7R)(1-0.9R)}$$ </li>
-<li>Substitute R with $\cfrac{1}{z}$(<strong>system function</strong>):<br>$$ \frac{Y}{X} = \frac{z^2}{(z-0.7)(z-0.9)} $$ </li>
-</ul>
-</li>
-</ul>
-<h3 id="Example-Fibonacci-system"><a href="#Example-Fibonacci-system" class="headerlink" title="Example: Fibonacci system"></a>Example: Fibonacci system</h3><h4 id="Poles-of-Fibonacci"><a href="#Poles-of-Fibonacci" class="headerlink" title="Poles of Fibonacci"></a>Poles of Fibonacci</h4><ul>
-<li>Difference equation for Fibonacci system<br>$y[n] = x[n] + y[n-1] + y[n-2]$</li>
-<li>System functional<br>$H = \cfrac{Y}{X} = \cfrac{1}{1-R-R^2}$</li>
-<li>Poles are at $z_0 = \phi = \cfrac{1+\sqrt{5}}{2} = 1.618$ and $z_1 = -\cfrac{1}{\phi} = -0.618$</li>
-<li>Mode<ul>
-<li>Each pole corresponds to a fundamental mode: $\phi^n$ and $(-\cfrac{1}{\phi})^n$</li>
-<li>$\phi^n$ diverges and $(-\cfrac{1}{\phi})^n$ oscillates </li>
-</ul>
-</li>
-<li>Response<br>The unit-sample response of the Fibonacci system can be written as a sum of fundamental modes:<br>$$<br>\begin{align}<br>H &amp;= \cfrac{Y}{X} \\<br>&amp;= \cfrac{1}{1-R-R^2} \\<br>&amp;= \cfrac{\frac{\phi}{\sqrt{5}}}{1-\phi R} + \cfrac{\frac{1}{\phi \sqrt{5}}}{1+\frac{1}{\phi} R}<br>\end{align}<br>$$<br>$$<br>h[n] = \frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n; \quad n &gt;= 0<br>$$<br><strong>OR</strong><br>$$<br>h[n] = (\frac{\phi}{\sqrt{5}}\phi^n + \frac{1}{\phi \sqrt{5}} (-\frac{1}{\phi})^n) * u[n]<br>$$</li>
-<li>$h[n]$ is the Fibonacci sequence $f$ (in Fibonacci system, the input is just impulse function $\delta[n]$, so the output is the impuse response), just calculate $f[n]$ without knowing $f[n-1]$ and $f[n-2]$ </li>
-</ul>
-<h3 id="Repeated-Poles"><a href="#Repeated-Poles" class="headerlink" title="Repeated Poles"></a>Repeated Poles</h3><ul>
-<li>Consider a system $H$ whose unit-sample response is<br>$$<br>y[n] = \{ \begin{matrix} n+1 &amp; for \quad n &gt;= 0 \\ 0 &amp; otherwise \end{matrix}<br>$$<ul>
-<li>Difference equation: $y[n] = 2y[n-1] - y[n-2] + x[n]$ </li>
-<li>System functional: $H = \cfrac{Y}{X} = \cfrac{1}{1-2R+R^2} = \cfrac{1}{(1-R)(1-R)}$ </li>
-<li>Two identical poles, each at $z = 1$ </li>
-<li>H can be written as the cascade of two identical subsystems, each called G (G is an accumulator)<ul>
-<li>$y[n] = y[n-1] + x[n]$</li>
-</ul>
-</li>
-<li>Because the system functional has two poles at the same location, the unit-sample response of H cannot be expressed as a weighted sum of geometric sequences</li>
-</ul>
-</li>
-</ul>
-<h3 id="Complex-Poles"><a href="#Complex-Poles" class="headerlink" title="Complex Poles"></a>Complex Poles</h3><ul>
-<li>Partial fractions work even when the poles are complex </li>
-<li><p>Example: $H = \cfrac{Y}{X} = \cfrac{1}{1-R+R^2} = \cfrac{z^2}{1-z+z^2}$</p>
-<ul>
-<li>Poles are $z = \frac{1}{2} \pm \frac{\sqrt{3}}{2} = e^{\pm \frac{j\pi}{3}}$ </li>
-<li>$H = \cfrac{1}{1-e^{\frac{j\pi}{3}}R} * \cfrac{1}{1-e^{-\frac{j\pi}{3}}R}<br>   = \cfrac{1}{j\sqrt{3}}(\cfrac{e^{\frac{j\pi}{3}}}{1-e^{\frac{j\pi}{3}}R} - \cfrac{e^{\frac{-j\pi}{3}}}{1-e^{-\frac{j\pi}{3}}R})$ </li>
-<li>Two fundamental modes (both geometric sequences) <ul>
-<li>$e^{\frac{jn\pi}{3}} = \cos(\frac{n\pi}{3}) + j\sin(\frac{n\pi}{3})$ and $e^{\frac{-jn\pi}{3}} = \cos(\frac{-n\pi}{3}) - j\sin(\frac{n\pi}{3})$</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>The <strong>output</strong> of a <strong>real system</strong> has <strong>real values</strong>, and <strong>cannot have imaginary valus</strong>, which will conspire<br>$y[n] = x[n] + y[n-1] - y[n-2]$<br>$H = \cfrac{1}{j\sqrt{3}}(\cfrac{e^{\frac{j\pi}{3}}}{1-e^{\frac{j\pi}{3}}R} - \cfrac{e^{\frac{-j\pi}{3}}}{1-e^{-\frac{j\pi}{3}}R})$<br>$h[n] = \cfrac{1}{j\sqrt{3}}(e^{\frac{j\pi}{3}} * e^{\frac{jn\pi}{3}} - e^{-\frac{j\pi}{3}} * e^{-\frac{jn\pi}{3}})<br>= \cfrac{2}{\sqrt{3}}\sin(\cfrac{(n+1)\phi}{3})$ </p>
-</li>
-</ul>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
-<li>Systems composed of adders, gains, and delays can be characterized by their poles</li>
-<li>The poles of a system determines its fundamental modes </li>
-<li>The unit-sample response of a system can be expressed as a weighted sum of fundamental modes</li>
-<li>These properties follow from a polynomial interpretation of the system functional </li>
-</ul>
-<p><a href="http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/Image_Processing.html" target="_blank" rel="external">image processing</a></p>
-
+        <h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1>
       
     </div>
     
@@ -548,6 +431,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/15/aboutSignals-Systems/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

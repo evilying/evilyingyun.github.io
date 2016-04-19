@@ -4,17 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: thuthesis | Ying</title>
+  <title>Laplace Transform | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ying">
-<meta property="og:url" content="http://jinkun.site/tags/thuthesis/index.html">
+  <meta name="description" content="Laplace Transform
+Laplace Transform in CT is Corresponding to $Z$ Transform in DT. 
+Laplace transform maps a function of time $t$ to a function of $s$$X(s) = \int x(t)e^{-st}dt$
+
+Unilateral$X(s) = \in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laplace Transform">
+<meta property="og:url" content="http://jinkun.site/2016/04/19/aboutLaplaceTransform/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description">
+<meta property="og:description" content="Laplace Transform
+Laplace Transform in CT is Corresponding to $Z$ Transform in DT. 
+Laplace transform maps a function of time $t$ to a function of $s$$X(s) = \int x(t)e^{-st}dt$
+
+Unilateral$X(s) = \in">
+<meta property="og:updated_time" content="2016-04-19T13:31:48.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ying">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Laplace Transform">
+<meta name="twitter:description" content="Laplace Transform
+Laplace Transform in CT is Corresponding to $Z$ Transform in DT. 
+Laplace transform maps a function of time $t$ to a function of $s$$X(s) = \int x(t)e^{-st}dt$
+
+Unilateral$X(s) = \in">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -171,53 +184,112 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-aboutLaplaceTransform" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/05/aboutTHUThesisLatex/" class="archive-article-date">
-  	<time datetime="2016-04-05T07:53:20.000Z" itemprop="datePublished">Apr 5</time>
+    <div class="article-meta">
+      <a href="/2016/04/19/aboutLaplaceTransform/" class="article-date">
+  	<time datetime="2016-04-19T01:06:36.000Z" itemprop="datePublished">2016-04-19</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/05/aboutTHUThesisLatex/">关于THUThesis Latex出现的错误</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Laplace Transform
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MikTex/">MikTex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thuthesis/">thuthesis</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lessons/">Lessons</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Laplace-Transform"><a href="#Laplace-Transform" class="headerlink" title="Laplace Transform"></a>Laplace Transform</h1><ul>
+<li>Laplace Transform in CT is Corresponding to $Z$ Transform in DT. </li>
+<li><p>Laplace transform maps a function of time $t$ to a function of $s$<br>$<br>X(s) = \int x(t)e^{-st}dt<br>$</p>
+<ul>
+<li>Unilateral<br>$<br>X(s) = \int_0^{\infty} x(t)e^{-st}dt<br>$</li>
+<li>Bilateral<br>$<br>X(s) = \int_{-\infty}^{\infty} x(t)e^{-st}dt<br>$</li>
+</ul>
+</li>
+<li><p>ROC</p>
+<ul>
+<li>Left-sided signals have left-sided Laplace transforms (bilateral only) </li>
+<li>Example: $x(t) = -e^{-t}u(-t)$ <ul>
+<li>$X(s) = \int_{-\infty}^{0}-e^{-t}e^{-st}dt = \cfrac{1}{s+1} $ </li>
+<li>Provided $Re(s+1) &lt; 0$, then $Re(s) &lt; -1$ </li>
+</ul>
+</li>
+<li>Laplace transforms of left- and right-sided exponentials have the <strong>same form</strong> (except −); with left- and right-sided ROCs, respectively.</li>
+<li>Laplace transform of a signal that is both-sided is a vertical strip </li>
+</ul>
+</li>
+<li>Solving Differential Equations with Laplace Transform <ul>
+<li>$\dot{y}(t) + y(t) = \delta{t}$ </li>
+<li>Laplace Transform of a Derivative <ul>
+<li>$y(t) = \dot{x}(t)$ </li>
+<li>$Y(s) = \mathcal{L{y(t)}} = sX(s)$</li>
+<li>Provided $X(s)$ must converge.</li>
+</ul>
+</li>
+<li>Laplace Transform of the Impulse Function <ul>
+<li>$x(t) = \delta{t}$</li>
+<li>$X(s) = \int_{-\infty}^{\infty}x(t)e^{-st}dt = 1$ </li>
+<li>Sifting property: <ul>
+<li>Multiplying $f(t)$ by $\delta{t}$ and integrating over $t$ sifts out $f(0)$ </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Laplace transform converts a differential equation $\dot{y}(t) + y(t) = \delta{t}$ to an equivalent algebraic equation $sY + Y = 1$ </li>
+<li>Take inverse Laplace Transform(by recognizing form of transform): $y(t) = e^{-t}u(t), or\, y(t) = -e^{-t}u(-t), for\, each\, ROC$    </li>
+</ul>
+</li>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-003-signals-and-systems-fall-2011/lecture-videos/MIT6_003F11_lec06.pdf" target="_blank" rel="external">Properties of Laplace Transform</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/17/aboutCommonTools/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用工具索引</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
 
 </div>
       <footer id="footer">
@@ -243,9 +315,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
