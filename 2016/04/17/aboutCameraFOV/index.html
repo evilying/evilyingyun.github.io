@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://jinkun.site/2016/04/17/aboutCameraFOV/index.html">
 <meta property="og:site_name" content="Ying">
 <meta property="og:description" content="由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。">
-<meta property="og:updated_time" content="2016-04-17T15:09:54.387Z">
+<meta property="og:updated_time" content="2016-04-20T01:55:20.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于相机的视角（FOV）">
 <meta name="twitter:description" content="由于文章中提到了相机的视角（angular field of view, FOV），就顺便在网上查了一些参考资料，然而并没有官方的资料。">
@@ -215,6 +215,7 @@
 <h2 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h2><p><a href="http://stackoverflow.com/questions/3594199/iphone-4-camera-specifications-field-of-view-vertical-horizontal-angle" target="_blank" rel="external">提到了如何计算的</a>，感觉很对的样子，然而需要知道相机里面CMOS Sensor(如：OV8830-G04A)是怎么放置的，三围如何。<br>这就缺乏可靠性了。还有程序猿提出了在$iPhone4$之后可以调用接口得出结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;Camera&apos;s FOV is %f&quot;,myCamera.activeFormat.videoFieldOfView)</span><br></pre></td></tr></table></figure></p>
 <p>里面一共算出了两个数据(Sensor的三围不同):<br>$horizontal: 60.8^{\circ}, vertical: 47.5^{\circ}$和$horizontal: 56.423^{\circ}, vertical: 43.903^{\circ}$ </p>
 <p>综上，我认为用$horizontal \, FOV \approx 60^{\circ}$是合理的。</p>
+<p>关于<a href="http://capbone.com/depth-of-field-and-aperture-focal-distance/" target="_blank" rel="external">景深</a>。</p>
 
       
     </div>
