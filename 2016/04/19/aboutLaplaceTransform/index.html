@@ -14,7 +14,7 @@ Laplace Transform in CT is Corresponding to $Z$ Transform in DT.">
 <meta property="og:site_name" content="Ying">
 <meta property="og:description" content="Laplace Transform
 Laplace Transform in CT is Corresponding to $Z$ Transform in DT.">
-<meta property="og:updated_time" content="2016-04-19T13:38:27.861Z">
+<meta property="og:updated_time" content="2016-04-23T08:23:17.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laplace Transform">
 <meta name="twitter:description" content="Laplace Transform
@@ -254,6 +254,23 @@ Laplace Transform in CT is Corresponding to $Z$ Transform in DT.">
 </ul>
 </li>
 <li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-003-signals-and-systems-fall-2011/lecture-videos/MIT6_003F11_lec06.pdf" target="_blank" rel="external">Properties of Laplace Transform</a></li>
+</ul>
+<h1 id="Euler-Approximation"><a href="#Euler-Approximation" class="headerlink" title="Euler Approximation"></a>Euler Approximation</h1><h2 id="leaky-tank-example"><a href="#leaky-tank-example" class="headerlink" title="leaky tank example"></a>leaky tank example</h2><ul>
+<li>differential equation<br>$\tau\dot{y}(t) = x(t) - y(t)$</li>
+<li>system functional<br>$\cfrac{Y}{X} = \cfrac{A}{A+\tau}$</li>
+<li>system function<br>$H(s) = \cfrac{Y(s)}{X(s)} = \cfrac{1}{1+\tau s}$</li>
+<li>impulse response<br>$h(t) = \cfrac{1}{\tau}e^{-t/\tau}u(t)$</li>
+</ul>
+<p>Approximate continuous signals by discrete signals:<br>$x_d[n] = x_c(nT)$<br>$y_d[n] = y_c(nT)$ </p>
+<h2 id="Forward-Euler-Approximation"><a href="#Forward-Euler-Approximation" class="headerlink" title="Forward Euler Approximation"></a>Forward Euler Approximation</h2><p>Approximate derivative at $t = nT$ by looking forward in time:<br>$\dot{y_c}(nT) = \cfrac{y_d[n+1] - y_d[n]}{T}$<br>Approximate leaky-tank system using forward Euler approach<br>$y_d[n+1] - (1 - \cfrac{T}{\tau})y_d[n] = \cfrac{T}{\tau}x_d[n]$<br>Take the X transform:<br>$zY_d(z) - (1-\cfrac{T}{\tau})Y_d(z) = \cfrac{T}{\tau}X_d(z)$<br>DT Pole at $z = 1-\cfrac{T}{\tau}$ </p>
+<h3 id="Dependence-of-DT-pole-on-Stepsize"><a href="#Dependence-of-DT-pole-on-Stepsize" class="headerlink" title="Dependence of DT pole on Stepsize"></a>Dependence of DT pole on Stepsize</h3><ul>
+<li>The CT pole is fixed($s = -\cfrac{1}{\tau}$), DT pole is changing</li>
+<li>Dependence of DT pole on T is generic property of forward Euler</li>
+<li>$z = 1-\cfrac{T}{\tau} = 1 + sT$ </li>
+<li>DT stability: CT pole must be inside circle of radius $\cfrac{1}{T}$ at $s = -\cfrac{1}{T}$ <ul>
+<li>Because the $ROC$ of the DT stability is one circle, so the CT $ROC$ is also one circle. </li>
+</ul>
+</li>
 </ul>
 
       
