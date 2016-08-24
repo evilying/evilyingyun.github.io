@@ -4,18 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Segway Robot at the Intel Developer Forum | Ying</title>
+  <title>Robot evil3 environment | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
+  <meta name="description" content="Connecting to the Internet via USB
+Bug Warning in windows 7
+When we use windows7, bug is that the evil3 can connect to the host, but cannot access the internet. 
+
+
+ssh to virtualbox, then ssh to evil3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Segway Robot at the Intel Developer Forum">
-<meta property="og:url" content="http://jinkun.site/2016/04/13/aboutSegwayRobot/index.html">
+<meta property="og:title" content="Robot evil3 environment">
+<meta property="og:url" content="http://jinkun.site/2016/06/22/evil3Robot/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
-<meta property="og:updated_time" content="2016-04-17T15:10:15.778Z">
+<meta property="og:description" content="Connecting to the Internet via USB
+Bug Warning in windows 7
+When we use windows7, bug is that the evil3 can connect to the host, but cannot access the internet. 
+
+
+ssh to virtualbox, then ssh to evil3">
+<meta property="og:updated_time" content="2016-08-24T00:17:15.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Segway Robot at the Intel Developer Forum">
-<meta name="twitter:description" content="在网上看到Segway机器人的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，这下还是不如lego Ev3。">
+<meta name="twitter:title" content="Robot evil3 environment">
+<meta name="twitter:description" content="Connecting to the Internet via USB
+Bug Warning in windows 7
+When we use windows7, bug is that the evil3 can connect to the host, but cannot access the internet. 
+
+
+ssh to virtualbox, then ssh to evil3">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -172,11 +187,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-aboutSegwayRobot" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-evil3Robot" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/13/aboutSegwayRobot/" class="article-date">
-  	<time datetime="2016-04-13T21:44:27.000Z" itemprop="datePublished">2016-04-13</time>
+      <a href="/2016/06/22/evil3Robot/" class="article-date">
+  	<time datetime="2016-06-22T18:37:14.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
     </div>
   
@@ -189,7 +204,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Segway Robot at the Intel Developer Forum
+      Robot evil3 environment
     </h1>
   
 
@@ -198,7 +213,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robot/">Robot</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/evil3/">evil3</a></li></ul>
 	</div>
 
         
@@ -209,20 +224,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在网上看到<a href="http://robot.segway.com/" target="_blank" rel="external">Segway机器人</a>的消息，觉得还不错，不过有一点很缺陷的是基于android系统，而不是原生的Linux系统，<br>这下还是不如lego Ev3。<a id="more"></a> </p>
-<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
-<li>开发人员比较多，会有很多应用出来，毕竟平台是越有趣越好，</li>
-<li>这个机器人上面有GPU芯片，这个大大增强了计算能力。</li>
+        <h2 id="Connecting-to-the-Internet-via-USB"><a href="#Connecting-to-the-Internet-via-USB" class="headerlink" title="Connecting to the Internet via USB"></a><a href="http://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/" target="_blank" rel="external">Connecting to the Internet via USB</a></h2><ul>
+<li><em><strong>Bug Warning in windows 7</strong></em><ul>
+<li>When we use windows7, bug is that the evil3 can connect to the host, but cannot access the internet. </li>
 </ul>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li>基于Java的应用会很慢，</li>
-<li>如果使用C/C++然后基于NDK，会比较麻烦，本身就有个兼容的问题。</li>
+</li>
+<li>ssh to virtualbox, then ssh to evil3<ul>
+<li>The best way to login to a guest Linux VirtualBox VM is port forwarding. </li>
+<li>By default, you should have one interface already which is using NAT. </li>
+<li>Then go to the Network settings and click the Port Forwarding button. </li>
+<li>Add a new Rule:<pre><code>Host port 3022, guest port 22, name ssh, other left blank. 
+</code></pre></li>
+<li>Please be sure you don’t forget to install an SSH server:<pre><code>sudo apt-get install openssh-server
+</code></pre></li>
+<li>To SSH into the guest VM, write:<pre><code>ssh -p 3022 user@127.0.0.1
+</code></pre>Where user is your username within the VM. </li>
 </ul>
-<h3 id="有意思的应用"><a href="#有意思的应用" class="headerlink" title="有意思的应用"></a>有意思的应用</h3><ul>
-<li>用来找物体</li>
-<li>像迅猛龙，追捕锁定的物体</li>
+</li>
 </ul>
-<p>所以，还是希望能有个基于Linux的版本出现，就像树莓派机器人一样。看来还是自己搭建一个<strong>平台</strong>好了。<br>另外一个亮点是Intel发布了只要10美元的芯片，额，这么便宜的芯片确定性能好吗？</p>
+<h2 id="Set-up-cross-compiling-environment"><a href="#Set-up-cross-compiling-environment" class="headerlink" title="Set up cross-compiling environment"></a>Set up <a href="http://www.ev3dev.org/docs/tutorials/using-docker-to-cross-compile/" target="_blank" rel="external">cross-compiling environment</a></h2><ul>
+<li><strong>docker on ubuntu 16.04.1 LTS</strong> as my cross-compiling environment<ul>
+<li>install <a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">docker</a> </li>
+<li><strong>Warning</strong>: need to install <strong>qemu-user-static</strong> on your host computer, otherwise you will get an error: exec user process caused “exec format error”.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Errors-I-meet"><a href="#Errors-I-meet" class="headerlink" title="Errors I meet"></a>Errors I meet</h2><ul>
+<li>/usr/include/features.h:367:25: fatal error: sys/cdefs.h: No such file or directory<ul>
+<li>Sol: need to <strong>apt-get install libc6-dev-i386</strong> </li>
+</ul>
+</li>
+<li>ld: cannot find crti.o: No such file or directory<ul>
+<li><a href="https://bugs.launchpad.net/ubuntu/+source/binutils/+bug/738098" target="_blank" rel="external">Bug</a> in Ubuntu16 <ul>
+<li>In fact not this problem </li>
+</ul>
+</li>
+<li>Sol: Just one <strong>error</strong> in the <a href="http://www.ev3dev.org/docs/tutorials/using-docker-to-cross-compile/#using-the-real-cross-compiler" target="_blank" rel="external">ev3dev tutorial</a><ul>
+<li>no <strong>–sysroot</strong> settings </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -232,18 +275,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/14/aboutDream/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/23/neunetwork-perceptrons/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如风般的思绪
+          Neural Network-perceptrons
         
       </div>
     </a>
   
   
-    <a href="/2016/04/12/aboutMicrosoftLesson/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Big Machine Learning @MSRA</div>
+    <a href="/2016/05/18/reportInMIT/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">report In Princeton</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
