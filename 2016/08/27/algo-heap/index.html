@@ -6,37 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Heap | Ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Heap: complete binary tree
-
-complete binary tree
-every level is completely filled, except possibly the last level, and all nodes are as far left as possible.
-
-
-full binary tree
-each node is eigher a l">
+  <meta name="description" content="Heap: complete binary tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Heap">
 <meta property="og:url" content="http://jinkun.site/2016/08/27/algo-heap/index.html">
 <meta property="og:site_name" content="Ying">
-<meta property="og:description" content="Heap: complete binary tree
-
-complete binary tree
-every level is completely filled, except possibly the last level, and all nodes are as far left as possible.
-
-
-full binary tree
-each node is eigher a l">
-<meta property="og:updated_time" content="2016-08-28T17:31:07.730Z">
+<meta property="og:description" content="Heap: complete binary tree">
+<meta property="og:updated_time" content="2016-11-16T15:29:20.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Heap">
-<meta name="twitter:description" content="Heap: complete binary tree
-
-complete binary tree
-every level is completely filled, except possibly the last level, and all nodes are as far left as possible.
-
-
-full binary tree
-each node is eigher a l">
+<meta name="twitter:description" content="Heap: complete binary tree">
   
     <link rel="alternative" href="/atom.xml" title="Ying" type="application/atom+xml">
   
@@ -226,7 +205,8 @@ each node is eigher a l">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Heap-complete-binary-tree"><a href="#Heap-complete-binary-tree" class="headerlink" title="Heap: complete binary tree"></a>Heap: complete binary tree</h1><blockquote>
+        <h1 id="Heap-complete-binary-tree"><a href="#Heap-complete-binary-tree" class="headerlink" title="Heap: complete binary tree"></a>Heap: complete binary tree</h1><a id="more"></a>
+<blockquote>
 <ul>
 <li>complete binary tree<ul>
 <li>every level is completely filled, except possibly the last level, and all nodes are as far left as possible.</li>
@@ -268,16 +248,46 @@ each node is eigher a l">
 </ul>
 </li>
 <li>the number of nodes of height(h) Max-heap<ul>
-<li>$2^h+1 &lt; n &lt; 2^{h+1}-1$</li>
+<li>$2^h &lt; n &lt; 2^{h+1}-1$</li>
 </ul>
 </li>
 <li>the leaves in the array is: $[n/2+1,…,n]$</li>
+<li>height: height of node $i$ is the maximum number of edges on a path from $i$ to a leaf<ul>
 <li>height of a tree is the height of the root</li>
+</ul>
+</li>
 </ul>
 <h2 id="bulding-and-using-heaps"><a href="#bulding-and-using-heaps" class="headerlink" title="bulding and using heaps"></a>bulding and using heaps</h2><h3 id="maintain-max-heap-property"><a href="#maintain-max-heap-property" class="headerlink" title="maintain max-heap property"></a>maintain max-heap property</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Max-Heapify(A, j)</span><br><span class="line"></span><br><span class="line">	l = leftChild(j);</span><br><span class="line">	r = rightChild(j);</span><br><span class="line">	if l &lt;= n and A[l] &gt; A[j]</span><br><span class="line">		largest = l;</span><br><span class="line">	else</span><br><span class="line">		largest = j;</span><br><span class="line">	if r &lt;= n and A[r] &gt; A[largest]</span><br><span class="line">		largest = r;</span><br><span class="line">	if largest != j</span><br><span class="line">		exchange A[j] with A[largest]</span><br><span class="line">		Max-Heapify(A, largest);</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>largest</strong> is just the index of largest value not the value.<br>running time of Max-Heapify?<br>&gt;</p>
+<ul>
+<li><strong>largest</strong> is just the index of largest value not the value.</li>
+<li>running time of Max-Heapify?<ul>
+<li>$T(n) \le T(2n/3) + \Theta(1)$</li>
+<li>$T(n) = O(logn)$<blockquote>
+<ul>
+<li>the largest size of subtree of complete binary tree</li>
+<li>half-full on the last level<br>$$size(leftChild(i)) = 2^{h-1} + \frac{n-2^{h-1}-1}{2}<br>= 2 * 2^{h-1} - 1$$<br>$$n = 2^{h-1} + 2^h - 1<br>= 3 * 2^{h-1} - 1$$<br>$$\frac{size(leftChild(i))}{n} =<br>\frac{2*2^{h-1} - 1}{3*2^{h-1} - 1} \le \frac{2}{3}$$</li>
+</ul>
 </blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="build-a-heap"><a href="#build-a-heap" class="headerlink" title="build a heap"></a>build a heap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Build-Max-heap(A)</span><br><span class="line">	for i = n/2: -1: 1</span><br><span class="line">		Max-Heapify(i);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>each call to Max-Heapify(i) takes time O(height(i))</li>
+<li>a heap has height $\lfloor logn \rfloor$</li>
+<li>There are at most $\lceil n/2^{h+1} \rceil$ nodes at height h</li>
+<li>Total running time:<br>$$\sum_{h=0}^{\lfloor logn \rfloor}{\lceil \frac{n}{2^{h+1}} \rceil}O(h)<br>= O(n)$$</li>
+</ul>
+<h3 id="sort-using-a-heap"><a href="#sort-using-a-heap" class="headerlink" title="sort using a heap"></a>sort using a heap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Heapsort(A)</span><br><span class="line">	Build-Max-heap(A)</span><br><span class="line">	for i = A.length downto 2</span><br><span class="line">		exchange A[1] with A[i]</span><br><span class="line">		A.heap-size = A.heap-size - 1</span><br><span class="line">		Max-Heapify(A, 1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>building a max-heap takes time $O(n)$</li>
+<li>There are $n-1$ calls to Max-Heapify</li>
+<li>Each call to Max-Heapify takes time $O(logn)$</li>
+<li>Total running time: $O(nlogn)$</li>
+</ul>
 
       
     </div>
